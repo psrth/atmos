@@ -11,10 +11,10 @@
           />
       </div>
 
-      <div class="weather-wrap">
+      <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
 
         <div class="location-box">
-          <div class="location">New Delhi, India</div>
+          <div class="location"> {{weather.name}}, {{weather.sys.country}}</div>
           <div class="date">Saturday — July 18, 2020</div>
         </div>
 
@@ -37,7 +37,7 @@ export default {
 
     return {
       api_key: '39baf1397c2e0a511fc699715cb417b6',
-      url_base: 'https://api.openweathermap.org/data/2.5',
+      url_base: 'https://api.openweathermap.org/data/2.5/',
 
       query: '',
       weather: {}
@@ -45,7 +45,17 @@ export default {
   },
 
   methods: {
-
+    fetchWeather (e) {
+      if (e.key == "Enter") {
+        fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
+          .then(res => {
+            return res.json();
+          }).then(this.setResults);
+      }
+    },
+    setResults (results) {
+      this.weather = results;
+    }
   }
 }
 </script>
