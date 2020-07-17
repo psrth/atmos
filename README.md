@@ -1,24 +1,11 @@
 # atmos
+## meet Atmos, a weather app built using Vue.js and the OpenWeatherMap API
 
-## Project setup
-```
-npm install
-```
+## Description
+Atmos uses the Vue.js web framework to integrate markup, stylesheets, and scripting in one App.vue view file. The actual data is fetched from www.openweathermap.org/ using a url base and an API key. 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Use
+For now, atmos is hosted on netlify and can be found on mcow.ml/weather. Just type in a city, press enter and find out the weather!!
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Cool Feature
+For fun, try two places with a very high difference in temperature.
