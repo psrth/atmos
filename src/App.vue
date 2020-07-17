@@ -3,8 +3,22 @@
     <main>
       <div class="search-box">
         <input type="text" class="search-bar" placeholder="Search..."/>
-        
       </div>
+
+      <div class="weather-wrap">
+
+        <div class="location-box">
+          <div class="location">New Delhi, India</div>
+          <div class="date">Saturday — July 18, 2020</div>
+        </div>
+
+        <div class="weather-box">
+          <div class="temp">9* C</div>
+          <div class="weather">Rain</div>
+        </div>
+
+      </div>
+      
     </main>
   </div>
 </template>
