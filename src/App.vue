@@ -1,6 +1,12 @@
 <template>
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 20 ? 'warm' : ''">
     <main>
+
+      <!-- <div class="header">
+        <div class="container"><h1>Atmos 🌦</h1></div>
+      </div> -->
+
+
       <div class="search-box">
         <input 
           type="text" 
@@ -24,6 +30,10 @@
         </div>
 
       </div>
+
+      <!-- <div class="footer">
+        <div class="container">Made with ❤ by Parth Sharma, 2020 </div>
+      </div> -->
 
     </main>
   </div>
@@ -93,12 +103,34 @@ export default {
     background-image: url('./assets/warm-bg.jpg');
   }
 
-    main {
+  main {
     min-height: 100vh;
     padding: 25px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
   }
 
+  .header .footer {
+    align-items: center;
+    display: block;
+    width: 100%;
+    position: fixed;        
+    /* background: #333; */
+    padding: 10px 0;
+    color: #fff;
+  }
+
+  .header {
+    top:0;
+  }
+
+  .footer {
+    bottom:0;
+  }
+
+.container {
+  align-items: center;
+  /* text-c: #FFF; */
+}
 
   .search-box {
         width: 75%;
@@ -115,8 +147,6 @@ export default {
   }
 
  
-    
-
 
   .search-box .search-bar {
     display: block;
