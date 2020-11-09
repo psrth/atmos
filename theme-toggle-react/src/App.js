@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme, GlobalStyles } from "./themes.js";
+import Navbar from "./components/Navbar.js"
+import Card from "./components/Card.js"
+
+const StyledApp = styled.div`
+  color: ${(props) => props.theme.fontColor};
+`;
+
+const Toggle = styled.div `
+display: flex;
+justify-content: center;
+`
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <StyledApp>
+        <Navbar />
+        <Toggle><button onClick={() => themeToggler()}>Change Theme</button></Toggle>
+        <Card />
+      </StyledApp>
+    </ThemeProvider>
   );
 }
 
