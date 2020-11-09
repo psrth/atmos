@@ -20,7 +20,7 @@ const NavItem = styled.a`
 
 export default () => (
     <Nav>
-        Microsoft Student ting
+        <h1>Microsoft Learn Student Ambassadors</h1>
         <NavItem>Link 1</NavItem>
         <NavItem>Link 2</NavItem>
     </Nav>

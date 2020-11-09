@@ -10,8 +10,8 @@ const StyledApp = styled.div`
 `;
 
 const Toggle = styled.div `
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 `
 
 function App() {
